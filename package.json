@@ -1,9 +1,12 @@
 {
   "name": "react-page-locke",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "react-page-locke",
   "main": "src/Page.jsx",
-  "repository": "no",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liukeke/react-page-locke"
+  },
   "scripts": {
     "d": "webpack-dev-server --devtool eval --progress --colors --port=8888 --inline --hot --content-base build",
     "p": "webpack --progress --colors --config webpack.config.publish.js",
