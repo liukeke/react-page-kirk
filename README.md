@@ -1,4 +1,4 @@
 react-page-locke
 
-ES5
+react + ES6
 
