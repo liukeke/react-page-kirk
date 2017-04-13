@@ -8,7 +8,7 @@
     "url": "https://github.com/liukeke/react-page-locke"
   },
   "scripts": {
-    "d": "webpack-dev-server --devtool eval --progress --colors --port=8888 --inline --hot --content-base build",
+    "d": "webpack-dev-server --devtool eval --progress --colors --port=8889 --inline --hot --content-base docs",
     "p": "webpack --progress --colors --config webpack.config.publish.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
