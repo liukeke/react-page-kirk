@@ -1,5 +1,5 @@
-react-page-locke
+react-page-kirk
 
 react + ES6
 
-https://liukeke.github.io/react-page-locke/
+https://liukeke.github.io/react-page-kirk/
