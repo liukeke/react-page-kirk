@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Page from './Page.jsx';
+import Page from './page.js';
 class Entry extends Component{
     constructor(props) {
         super(props);

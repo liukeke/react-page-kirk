@@ -1,6 +1,6 @@
 {
   "name": "react-page-locke",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "react-page-locke",
   "main": "index.js",
   "repository": {
@@ -11,7 +11,7 @@
     "d": "webpack-dev-server --devtool eval --progress --colors --port=8889 --inline --hot --content-base docs",
     "p": "webpack --progress --colors --config webpack.config.publish.js",
     "lib": "webpack --progress --colors --config webpack.config.lib.js",
-    "release": "babel src --out-dir lib && xcopy /s /y src\\page.css lib\\",
+    "build": "babel src --out-dir lib && xcopy /s /y src\\page.css lib\\",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
