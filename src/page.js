@@ -5,6 +5,12 @@
 
 import React,{Component} from 'react';
 import './page.css';
+
+var pageOn = function(pageOn){
+    window.location.hash = 'pageOn='+ pageOn;
+};
+
+
 class Entry extends Component{
     constructor(props) {
         super(props);
@@ -17,13 +23,19 @@ class Entry extends Component{
         };
     }
     handlePagePrevOrpageNextOnclick(type){
+
         var pageSize = this.state.pageSize;
         var pageNumOn = document.getElementsByClassName("page")[0].getElementsByClassName("on")[0].innerText;
         if (type == 1) {
             this.props.getAjaxList(pageNumOn * pageSize, pageNumOn * pageSize + pageSize);
+            /*console.log(parseInt(pageNumOn)+1);*/
+            pageOn(parseInt(pageNumOn)+1);
         } else {
             this.props.getAjaxList((pageNumOn - 1) * pageSize - pageSize, (pageNumOn - 1) * pageSize);
+            /*console.log(parseInt(pageNumOn)-1)*/
+            pageOn(parseInt(pageNumOn)-1);
         }
+
     }
     componentDidMount(){
         var state = this.state;
@@ -99,6 +111,8 @@ class PageItem extends Component{
     handlePageOnclick(pageNum) {
         var pageSize = this.props.pageSize;
         this.props.getAjaxList((pageNum - 1) * pageSize, (pageNum - 1) * pageSize + pageSize);
+        /*console.log(pageNum);*/
+        pageOn(pageNum);
     }
     render(){
         var THIS = this;
