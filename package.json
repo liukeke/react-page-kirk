@@ -12,7 +12,7 @@
     "p": "webpack --progress --colors --config webpack.config.publish.js",
     "build": "babel src --out-dir lib && xcopy /s /y src\\page.css lib\\"
   },
-  "author": "",
+  "author": "kirk",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
