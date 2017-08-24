@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
 import Page from './page.js';
 /*获取路由里值*/
-var urlRouterParam = function GetQueryString(name, url) {
-    var reg = new RegExp(".*[&\#]" + name + "=([^&]*)(&|$)");
-    if (url == null) {
-        var r = window.location.hash.match(reg);
+let urlRouterParam = function GetQueryString(name, url) {
+    let reg = new RegExp(".*[&\#]" + name + "=([^&]*)(&|$)");
+    let r = '';
+    if (url) {
+        r = url.match(reg);
     } else {
-        var r = url.match(reg);
+        r = window.location.hash.match(reg);
     }
     if (r != null) return decodeURIComponent(r[1]);
     return null;
@@ -28,6 +29,7 @@ class Entry extends Component{
     }
     componentDidMount(){
         var pageOn = urlRouterParam('pageOn');
+        console.log(pageOn);
         this.getAjaxList(pageOn ? (pageOn-1)*this.state.pageSize : 0,this.state.start + this.state.pageSize);
     }
     render() {

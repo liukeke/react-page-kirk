@@ -23,7 +23,7 @@ class Entry extends Component {
         };
     }
 
-    handlePagePrevOrpageNextOnclick(type) {
+    handlePagePrevOrPageNextOnclick(type) {
 
         let pageSize = this.state.pageSize;
         let pageNumOn = document.getElementsByClassName("page")[0].getElementsByClassName("on")[0].innerText;
@@ -103,7 +103,7 @@ class Entry extends Component {
                 {
                     state.pagePrev ?
                         <a className="butGray" href="javascript:;"
-                           onClick={state.pagePrev ? this.handlePagePrevOrpageNextOnclick.bind(this, 0) : null}>上一页</a>
+                           onClick={state.pagePrev ? this.handlePagePrevOrPageNextOnclick.bind(this, 0) : null}>上一页</a>
                         :
                         null
                 }
@@ -143,7 +143,7 @@ class Entry extends Component {
                 {
                     state.pageNext ?
                         <a className="butGray" href="javascript:;"
-                           onClick={state.pageNext ? this.handlePagePrevOrpageNextOnclick.bind(this, 1) : null}>下一页</a>
+                           onClick={state.pageNext ? this.handlePagePrevOrPageNextOnclick.bind(this, 1) : null}>下一页</a>
                         :
                         null
                 }
