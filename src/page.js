@@ -94,10 +94,11 @@ class Entry extends Component {
             }
         }
 
-        let item = numArray.splice(0, numArray.length - 1).map((data) => {
+        let item = numArray.map((data) => {
             return <PageItem key={data} pageNum={data} pageSize={pageSize} start={start}
                              handlePageOnclick={this.handlePageOnclick.bind(this)}/>
         });
+        console.log(num, numArray.length);
         return (
             <div className="page">
                 {
@@ -108,13 +109,13 @@ class Entry extends Component {
                         null
                 }
                 {
-                    pageNumOn > ((pageSize / 2) + 1) ?
+                    num > pageSize && pageNumOn > ((pageSize / 2) + 1) ?
                         <span>
                             <a className={1 === (this.state.start / this.props.pageSize + 1) ? "on" : "butGray"}
                                href="javascript:;"
                                onClick={this.handlePageOnclick.bind(this, 1)}>1</a>
                             {
-                                pageNumOn > ((pageSize / 2) + 2) ?
+                                (num > pageSize + 1) && pageNumOn > ((pageSize / 2) + 2) ?
                                     <span className="ellipsis">...</span>
                                     :
                                     null
@@ -125,10 +126,10 @@ class Entry extends Component {
                 }
                 {item}
                 {
-                    num > pageSize ?
+                   num > pageSize && pageNumOn < (num - (pageSize / 2) + 1) ?
                         <span>
                             {
-                                pageNumOn < (num - (pageSize / 2) + 1) ?
+                                (num > pageSize + 1) && pageNumOn < (num - (pageSize / 2)) ?
                                     <span className="ellipsis">...</span>
                                     :
                                     null

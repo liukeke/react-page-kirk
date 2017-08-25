@@ -24,7 +24,7 @@ class Entry extends Component{
     getAjaxList(pageNum) {
         /*这里是ajax调用程序*/
         this.setState({totalNum:0},()=>{
-            this.setState({totalNum:401,start:pageNum});
+            this.setState({totalNum:111,start:pageNum});
         });
     }
     componentDidMount(){
